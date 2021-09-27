@@ -38,6 +38,18 @@ RUN \
     nodejs \
     sudo \
     yarn && \
+  echo "**** install java environments ****" && \
+  apt-get install -y \
+    openjdk-8-jdk \
+    maven \
+    wget && \
+  echo "**** install wrk build dependencies ****" && \
+  apt-get install -y \
+    unzip && \
+  echo "**** build wrk **** " && \
+  git clone https://github.com/wg/wrk.git /tmp/wrk && \
+  make -C /tmp/wrk && \
+  cp /tmp/wrk/wrk /usr/local/bin/wrk && \
   echo "**** install code-server ****" && \
   if [ -z ${CODE_RELEASE+x} ]; then \
     CODE_RELEASE=$(curl -sX GET https://registry.yarnpkg.com/code-server \
