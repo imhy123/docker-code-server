@@ -40,9 +40,9 @@ RUN \
     yarn && \
   echo "**** install java environments ****" && \
   apt-get install -y \
-    openjdk-8-jdk \
+    openjdk-11-jdk \
     wget && \
-  # maven must be installed after java8
+  # maven should be installed after java
   apt-get install -y \
     maven && \
   echo "**** install wrk build dependencies ****" && \
