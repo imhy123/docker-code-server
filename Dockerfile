@@ -41,8 +41,10 @@ RUN \
   echo "**** install java environments ****" && \
   apt-get install -y \
     openjdk-8-jdk \
-    maven \
     wget && \
+  # maven must be installed after java8
+  apt-get install -y \
+    maven && \
   echo "**** install wrk build dependencies ****" && \
   apt-get install -y \
     unzip && \
