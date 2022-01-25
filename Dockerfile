@@ -41,7 +41,7 @@ RUN \
   echo "**** install custom environments ****" && \
   apt-get install -y \
     openjdk-11-jdk \
-    wget && \
+    wget \
     python3-pip && \
   # maven should be installed after java
   apt-get install -y \
