@@ -38,14 +38,15 @@ RUN \
     nodejs \
     sudo \
     yarn && \
-  echo "**** install java environments ****" && \
+  echo "**** install custom environments ****" && \
   apt-get install -y \
     openjdk-11-jdk \
     wget && \
+    python3-pip && \
   # maven should be installed after java
   apt-get install -y \
     maven && \
-  echo "**** install wrk build dependencies ****" && \
+  echo "**** install custom util: wrk ****" && \
   apt-get install -y \
     unzip && \
   echo "**** build wrk **** " && \
