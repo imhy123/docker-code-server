@@ -43,6 +43,7 @@ RUN \
     openjdk-11-jdk \
     wget \
     python3-pip && \
+    nginx && \
   # maven should be installed after java
   apt-get install -y \
     maven && \
